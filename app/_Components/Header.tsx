@@ -14,10 +14,10 @@ const Header = () => {
   };
 
   const navItems = [
-    { label: "Home", section: "projects" },
+    { label: "Home", section: "home" },
     { label: "What we offer", section: "projects" },
     { label: "Blog", section: "projects" },
-    { label: "Sector", section: "projects" },
+    { label: "Sector", section: "sectors" },
     { label: "Contact Us", section: "projects" },
   ];
 
@@ -94,16 +94,19 @@ const Header = () => {
             <span>About us</span>
             <ChevronDown className={`transition-transform duration-300 ${isMouse ? "rotate-180" : ""}`} />
           </div>
+
           <div
-            className={`absolute left-0 top-10 bg-white text-black shadow-lg rounded-md z-10 transition-all duration-300 ease-in-out transform ${
-              isMouse ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 invisible"
+            className={`absolute left-0 top-12 min-w-[180px] bg-white rounded-xl shadow-xl overflow-hidden transition-all duration-300 z-50 ${
+              isMouse ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
             }`}>
             {AboutUsDropdownData.map((item, index) => (
-              <div
-                key={index}
-                className="p-2 hover:bg-gray-200 transition-colors cursor-pointer whitespace-nowrap">
-                <Link href={item.src}>{item.label}</Link>
-              </div>
+              <Link
+                href={item.src}
+                key={index}>
+                <div className="px-4 py-3 text-sm hover:bg-gray-100 transition-colors border-b last:border-none">
+                  {item.label}
+                </div>
+              </Link>
             ))}
           </div>
         </div>
@@ -117,16 +120,19 @@ const Header = () => {
             <span>What we offer</span>
             <ChevronDown className={`transition-transform duration-300 ${isWhatWeOfferOpen ? "rotate-180" : ""}`} />
           </div>
+
           <div
-            className={`absolute left-0 top-10 bg-white text-black shadow-lg rounded-md z-10 transition-all duration-300 ease-in-out transform ${
-              isWhatWeOfferOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-2 invisible"
+            className={`absolute left-0 top-12 min-w-[320px] max-h-[300px] overflow-y-auto bg-white rounded-xl shadow-xl transition-all duration-300 z-50 ${
+              isWhatWeOfferOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
             }`}>
             {WhatWeOfferDropdownData.map((item, index) => (
-              <div
-                key={index}
-                className="p-2 hover:bg-gray-200 transition-colors cursor-pointer whitespace-nowrap">
-                <Link href={item.src}>{item.label}</Link>
-              </div>
+              <Link
+                href={item.src}
+                key={index}>
+                <div className="px-4 py-3 text-sm hover:bg-gray-100 transition-colors border-b last:border-none">
+                  {item.label}
+                </div>
+              </Link>
             ))}
           </div>
         </div>

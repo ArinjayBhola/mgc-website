@@ -6,7 +6,9 @@ import { motion } from "framer-motion";
 
 const Welcome = () => {
   return (
-    <div className="relative w-full h-[650px]">
+    <div
+      className="relative w-full h-[650px]"
+      id="home">
       <Image
         src="/welcome.png"
         alt="Welcome"

@@ -45,7 +45,7 @@ const AboutUs = () => {
         transition={{ duration: 0.8, delay: 0.6 }}
         viewport={{ once: true, amount: 0.5 }}>
         <Link href="/aboutus">
-          <button className="px-8 py-3 mt-4 border-2 border-black hover:bg-blue-700 hover:text-white transition-colors cursor-pointer hover:shadow-lg text-lg rounded-lg shadow-md">
+          <button className="px-8 py-3 mt-4 border-2 border-black duration-300 hover:bg-blue-700 hover:text-white transition-colors cursor-pointer hover:shadow-lg text-lg rounded-lg shadow-md">
             Read More
           </button>
         </Link>
