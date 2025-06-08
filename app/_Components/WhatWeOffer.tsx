@@ -23,7 +23,7 @@ const WhatWeOfferData = [
   { topic: "Risk Mitigation", src: "/services/risk-mitigation" },
 ];
 
-const WhatWeOfferCarousel = () => {
+const WhatWeOffer = () => {
   const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState<"left" | "right">("right");
 
@@ -118,4 +118,4 @@ const WhatWeOfferCarousel = () => {
   );
 };
 
-export default WhatWeOfferCarousel;
+export default WhatWeOffer;

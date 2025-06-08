@@ -1,8 +1,8 @@
 "use client";
 
-import React from "react";
-import { Building2, BadgeCheck, Users2 } from "lucide-react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { Building2, BadgeCheck, Users2, X } from "lucide-react";
+import { AnimatePresence, motion } from "framer-motion";
 
 // Fade-up variant for reusability
 const fadeUp = {
@@ -14,7 +14,40 @@ const fadeUp = {
   }),
 };
 
+// Modal animation variant
+const modalVariants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
+  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } },
+};
+
+const cardDetails = [
+  {
+    title: "Who We Are",
+    icon: <Building2 className="h-10 w-10 text-blue-600 mb-4" />,
+    short:
+      "With  43 years of history, Mittal Gupta & Co has been one of Kanpur's prominent Chartered Accountancy firms... Read more",
+    full: `With  43 years of history, Mittal Gupta & Co has been one of Kanpur's prominent Chartered Accountancy firms providing wide array of financial and advisory services to reputed Indian companies.
+Following a top-notch corporate culture, we believe in delivering accurate, relevant, and timely information to the decision-makers using industry expertise. We help companies to stay compliant and lawful. We aim at applying intelligence and expertise by providing realistic solutions to complicated business scenarios using analytical skills, functional expertise and intensive training. Our result-oriented and success-driven partners believe in providing equal services to clients of all sizes and at all locations.`,
+  },
+  {
+    title: "What We Do",
+    icon: <BadgeCheck className="h-10 w-10 text-green-600 mb-4" />,
+    short:
+      "With over 40 years of experience, we partner with clients across industries, services, and operational levels to drive... Read more",
+    full: `With over 40 years of experience, we partner with clients across industries, services, and operational levels to drive excellence at every step. Backed by deep professional expertise and a multidisciplinary team, we are committed to shared growth—because our clients' success is our greatest achievement.`,
+  },
+  {
+    title: "Our Values",
+    icon: <Users2 className="h-10 w-10 text-indigo-600 mb-4" />,
+    short: "Our enduring reputation is rooted in the foundational values of Mittal Gupta and Co. ... Read more",
+    full: `Our enduring reputation is rooted in the foundational values of Mittal Gupta and Co., which continue to shape both our success and that of our clients. Guided by unwavering commitment, principled integrity, and a deep sense of purpose, our professional team remains steadfast in upholding these values—ensuring they propel us confidently into the future.`,
+  },
+];
+
 const DetailAboutUs = () => {
+  const [selected, setSelected] = useState<null | number>(null);
+
   return (
     <div className="bg-white text-gray-800">
       {/* Hero Section */}
@@ -31,35 +64,59 @@ const DetailAboutUs = () => {
         </motion.p>
       </motion.section>
 
-      {/* Overview Cards */}
+      {/* Cards Section */}
       <section className="max-w-6xl mx-auto py-20 px-6 grid gap-10 md:grid-cols-3">
-        {[...Array(3)].map((_, i) => (
+        {cardDetails.map((card, i) => (
           <motion.div
             key={i}
-            className={`bg-white shadow-xl rounded-xl p-8 border-t-4 ${
+            className={`bg-white shadow-xl rounded-xl p-8 border-t-4 cursor-pointer hover:shadow-2xl transition ${
               i === 0 ? "border-blue-600" : i === 1 ? "border-green-600" : "border-indigo-600"
             }`}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeUp}
-            custom={i}>
-            {i === 0 && <Building2 className="h-10 w-10 text-blue-600 mb-4" />}
-            {i === 1 && <BadgeCheck className="h-10 w-10 text-green-600 mb-4" />}
-            {i === 2 && <Users2 className="h-10 w-10 text-indigo-600 mb-4" />}
-            <h3 className="text-2xl font-semibold mb-2">
-              {i === 0 ? "Who We Are" : i === 1 ? "What We Do" : "Our Values"}
-            </h3>
-            <p className="text-gray-600">
-              {i === 0
-                ? "Established in 1982, we’ve grown into one of Kanpur’s leading CA firms with 8 partners and 40+ professionals..."
-                : i === 1
-                ? "From auditing to strategic consulting, we empower businesses through deep expertise and client-first solutions..."
-                : "Integrity, professionalism, and accountability are the foundations of everything we do..."}
-            </p>
+            custom={i}
+            onClick={() => setSelected(i)}>
+            {card.icon}
+            <h3 className="text-2xl font-semibold mb-2">{card.title}</h3>
+            <p className="text-gray-600">{card.short}</p>
           </motion.div>
         ))}
       </section>
+
+      {/* Modal Popup with Blur Background */}
+      <AnimatePresence>
+        {selected !== null && (
+          <>
+            {/* Background Blur */}
+            <motion.div
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+
+            {/* Modal Content */}
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center px-4"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={modalVariants}>
+              <div className="bg-white p-6 rounded-lg max-w-lg w-full relative shadow-2xl">
+                <button
+                  onClick={() => setSelected(null)}
+                  className="absolute top-3 right-3 text-gray-600 hover:text-red-600 transition">
+                  <X className="w-6 h-6" />
+                </button>
+                <h2 className="text-2xl font-bold mb-4">{cardDetails[selected].title}</h2>
+                <p className="text-gray-700 whitespace-pre-line">{cardDetails[selected].full}</p>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Legacy Section */}
       <motion.section

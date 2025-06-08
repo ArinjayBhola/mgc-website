@@ -1,25 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { ChevronDown, Mail, Phone } from "lucide-react";
+import { ChevronDown, Mail, Phone, Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const Header = () => {
   const [isMouse, setIsMouse] = useState(false);
   const [isWhatWeOfferOpen, setIsWhatWeOfferOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    setIsMobileMenuOpen(false);
   };
-
-  const navItems = [
-    { label: "Home", section: "home" },
-    { label: "What we offer", section: "projects" },
-    { label: "Blog", section: "projects" },
-    { label: "Sector", section: "sectors" },
-    { label: "Contact Us", section: "projects" },
-  ];
 
   const AboutUsDropdownData = [
     { label: "Our Team", src: "/team" },
@@ -43,69 +37,66 @@ const Header = () => {
 
   return (
     <div className="sticky top-0 z-50 bg-white shadow-2xl">
-      {/* Top Bar: Firm name left, contact info right */}
+      {/* Top Bar */}
       <div className="flex justify-between items-center px-4 py-2">
         <Link href={"/"}>
-          <div className="text-2xl font-semibold">Mittal Gupta & Co.</div>
+          <div className="text-2xl font-semibold text-gray-800">Mittal Gupta & Co.</div>
         </Link>
-        <div className="flex items-center space-x-6">
-          <div className="text-md text-gray-700 mt-2">
-            <div className="text-md flex items-center space-x-2 text-gray-800">
-              <span className="text-blue-600">
-                <Phone />
-              </span>
-              <span>0512-3158490, 9839034107, 9415131816</span>
-            </div>
+        <div className="hidden lg:flex items-center space-x-6">
+          <div className="flex items-center space-x-2 text-gray-800">
+            <Phone className="text-blue-600" />
+            <span>0512-3158490, 9839034107</span>
           </div>
-
-          <div className="text-md flex items-center space-x-2 text-gray-800">
-            <span className="text-blue-600">
-              <Mail />
-            </span>
+          <div className="flex items-center space-x-2 text-gray-800">
+            <Mail className="text-blue-600" />
             <span>mgco@mgcoca.in</span>
           </div>
-          <div className="w-12 h-12 relative">
-            <Image
-              src="/ca-logo.jpg"
-              alt="CA Logo"
-              width={500}
-              height={500}
-            />
-          </div>
+          <Image
+            src="/ca-logo.jpg"
+            alt="CA Logo"
+            width={40}
+            height={40}
+            className="rounded-full"
+          />
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
+          <Menu
+            size={28}
+            onClick={() => setIsMobileMenuOpen(true)}
+            className="text-gray-800"
+          />
         </div>
       </div>
 
-      {/* Gray Nav Bar */}
-      <div className="flex justify-center items-center bg-[#a6a6a6] p-4 space-x-6">
-        <Link href={"/"}>
-          <div
-            className="text-lg cursor-pointer hover:text-gray-700"
-            onClick={() => scrollToSection("projects")}>
-            Home
-          </div>
+      {/* Desktop Navigation Bar */}
+      <div className="hidden lg:flex justify-center items-center bg-[#a6a6a6] p-4 space-x-6 text-white text-lg">
+        <Link
+          href="/"
+          className="hover:text-black">
+          Home
         </Link>
 
         {/* About Us Dropdown */}
         <div
-          className="relative text-lg cursor-pointer hover:text-gray-700"
+          className="relative"
           onMouseEnter={() => setIsMouse(true)}
           onMouseLeave={() => setIsMouse(false)}>
-          <div className="flex items-center space-x-1">
-            <span>About us</span>
+          <div className="flex items-center space-x-1 cursor-pointer hover:text-black">
+            <span>About Us</span>
             <ChevronDown className={`transition-transform duration-300 ${isMouse ? "rotate-180" : ""}`} />
           </div>
-
           <div
-            className={`absolute left-0 top-12 min-w-[180px] bg-white rounded-xl shadow-xl overflow-hidden transition-all duration-300 z-50 ${
-              isMouse ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
+            className={`absolute top-10 left-0 bg-white rounded-xl shadow-xl text-black min-w-[180px] z-50 transition-all duration-300 ${
+              isMouse ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
             }`}>
-            {AboutUsDropdownData.map((item, index) => (
+            {AboutUsDropdownData.map((item, i) => (
               <Link
+                key={i}
                 href={item.src}
-                key={index}>
-                <div className="px-4 py-3 text-sm hover:bg-gray-100 transition-colors border-b last:border-none">
-                  {item.label}
-                </div>
+                className="block px-4 py-3 border-b hover:bg-gray-100 last:border-none text-sm">
+                {item.label}
               </Link>
             ))}
           </div>
@@ -113,39 +104,133 @@ const Header = () => {
 
         {/* What We Offer Dropdown */}
         <div
-          className="relative text-lg cursor-pointer hover:text-gray-700"
+          className="relative"
           onMouseEnter={() => setIsWhatWeOfferOpen(true)}
           onMouseLeave={() => setIsWhatWeOfferOpen(false)}>
-          <div className="flex items-center space-x-1">
-            <span>What we offer</span>
+          <div className="flex items-center space-x-1 cursor-pointer hover:text-black">
+            <span>What We Offer</span>
             <ChevronDown className={`transition-transform duration-300 ${isWhatWeOfferOpen ? "rotate-180" : ""}`} />
           </div>
-
           <div
-            className={`absolute left-0 top-12 min-w-[320px] max-h-[300px] overflow-y-auto bg-white rounded-xl shadow-xl transition-all duration-300 z-50 ${
-              isWhatWeOfferOpen ? "opacity-100 translate-y-0 visible" : "opacity-0 -translate-y-2 invisible"
+            className={`absolute top-10 left-0 bg-white rounded-xl shadow-xl text-black min-w-[320px] max-h-[300px] overflow-y-auto z-50 transition-all duration-300 ${
+              isWhatWeOfferOpen ? "opacity-100 visible translate-y-0" : "opacity-0 invisible -translate-y-2"
             }`}>
-            {WhatWeOfferDropdownData.map((item, index) => (
+            {WhatWeOfferDropdownData.map((item, i) => (
               <Link
+                key={i}
                 href={item.src}
-                key={index}>
-                <div className="px-4 py-3 text-sm hover:bg-gray-100 transition-colors border-b last:border-none">
-                  {item.label}
-                </div>
+                className="block px-4 py-3 border-b hover:bg-gray-100 last:border-none text-sm">
+                {item.label}
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Other Nav Items */}
-        {navItems.slice(2).map((item) => (
-          <div
-            key={item.label}
-            className="text-lg cursor-pointer hover:text-gray-700"
-            onClick={() => scrollToSection(item.section)}>
-            {item.label}
+        <div
+          onClick={() => scrollToSection("projects")}
+          className="cursor-pointer hover:text-black">
+          Blog
+        </div>
+        <div
+          onClick={() => scrollToSection("sectors")}
+          className="cursor-pointer hover:text-black">
+          Sector
+        </div>
+        <div
+          onClick={() => scrollToSection("projects")}
+          className="cursor-pointer hover:text-black">
+          Contact Us
+        </div>
+      </div>
+
+      {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-[80%] max-w-xs bg-white z-[100] shadow-2xl transition-transform duration-300 ease-in-out rounded-r-xl ${
+          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}>
+        {/* Sidebar Header */}
+        <div className="flex items-center justify-between p-4 border-b shadow-sm">
+          <div className="flex items-center space-x-3">
+            <Image
+              src="/ca-logo.jpg"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
+            <div className="text-lg font-semibold text-gray-800">Mittal Gupta & Co.</div>
           </div>
-        ))}
+          <X
+            size={24}
+            className="text-gray-700 cursor-pointer"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        </div>
+
+        {/* Contact Info */}
+        <div className="p-4 border-b text-sm text-gray-700 space-y-2">
+          <div className="flex items-center space-x-2">
+            <Phone
+              className="text-blue-600"
+              size={16}
+            />
+            <span>0512-3158490</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <Mail
+              className="text-blue-600"
+              size={16}
+            />
+            <span>mgco@mgcoca.in</span>
+          </div>
+        </div>
+
+        {/* Navigation */}
+        <div className="p-4 space-y-6 text-gray-800 text-base">
+          <div>
+            <div className="font-medium text-blue-800 mb-1">Home</div>
+          </div>
+
+          <div>
+            <div className="font-medium text-blue-800 mb-1">About Us</div>
+            <div className="pl-4 space-y-2 text-sm text-gray-600">
+              {AboutUsDropdownData.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.src}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block hover:text-blue-500">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="font-medium text-blue-800 mb-1">What We Offer</div>
+            <div className="pl-4 space-y-2 text-sm text-gray-600 max-h-[160px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300">
+              {WhatWeOfferDropdownData.map((item) => (
+                <Link
+                  key={item.label}
+                  href={item.src}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block hover:text-blue-500">
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <div className="font-medium text-blue-800 mb-1">Blog</div>
+          </div>
+          <div>
+            <div className="font-medium text-blue-800 mb-1">Sector</div>
+          </div>
+          <div>
+            <div className="font-medium text-blue-800 mb-1">Contact Us</div>
+          </div>
+        </div>
       </div>
     </div>
   );
