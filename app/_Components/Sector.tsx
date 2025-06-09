@@ -67,24 +67,28 @@ const SectorsPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-blue-50 min-h-screen py-20 px-6 lg:px-24">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-5xl font-bold mb-8">Sectors</h2>
+    <div className="bg-gradient-to-br from-white to-blue-50 py-20 px-6 lg:px-24">
+      <div className="max-w-8xl mx-auto text-center">
+        <h2
+          className="text-4xl sm:text-5xl font-bold mb-8 text-black"
+          id="sectors">
+          Sectors
+        </h2>
 
-        <div className="flex items-center justify-center space-x-6">
+        <div className="flex items-center justify-between sm:justify-center space-x-6 mb-8">
           {/* Prev Button */}
           <button
             onClick={handlePrev}
             disabled={startIndex === 0}
-            className="disabled:opacity-30"
+            className="disabled:opacity-30 cursor-pointer mb-24"
             aria-label="Previous">
             <ArrowLeft
               size={36}
-              className="text-blue-700 cursor-pointer"
+              className="text-blue-700 cursor-pointer hover:text-blue-500"
             />
           </button>
 
-          <div className="relative w-full max-w-[1200px] h-[240px] overflow-hidden">
+          <div className="relative w-full max-w-[1200px] h-[280px] sm:h-[320px] overflow-hidden">
             <AnimatePresence
               initial={false}
               custom={direction}>
@@ -95,15 +99,15 @@ const SectorsPage = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="absolute top-0 left-0 w-full h-full grid grid-cols-5 gap-8">
+                className="absolute top-0 left-0 w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 sm:gap-8">
                 {visibleItems.map((sector, idx) => (
                   <div
                     key={idx}
-                    className="bg-white rounded-3xl shadow-md hover:shadow-xl hover:scale-[1.05] transition-transform duration-300 cursor-pointer p-5 flex flex-col items-center justify-center">
-                    <div className="text-blue-600 bg-blue-100 rounded-full p-3 mb-4 flex items-center justify-center">
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl p-5 sm:p-6 flex flex-col items-center justify-center text-center transition-transform transform hover:scale-105">
+                    <div className="text-blue-600 bg-blue-100 rounded-full p-3 sm:p-4 mb-4 sm:mb-6 flex items-center justify-center">
                       {sector.icon}
                     </div>
-                    <p className="font-semibold text-blue-900 text-base sm:text-lg">{sector.name}</p>
+                    <p className="font-semibold text-blue-900 text-sm sm:text-base">{sector.name}</p>
                   </div>
                 ))}
               </motion.div>
@@ -114,11 +118,11 @@ const SectorsPage = () => {
           <button
             onClick={handleNext}
             disabled={startIndex >= maxStartIndex}
-            className="disabled:opacity-30"
+            className="disabled:opacity-30 cursor-pointer mb-24"
             aria-label="Next">
             <ArrowRight
               size={36}
-              className="text-blue-700 cursor-pointer"
+              className="text-blue-700 cursor-pointer hover:text-blue-500"
             />
           </button>
         </div>

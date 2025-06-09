@@ -45,7 +45,7 @@ const Header = () => {
         <div className="hidden lg:flex items-center space-x-6">
           <div className="flex items-center space-x-2 text-gray-800">
             <Phone className="text-blue-600" />
-            <span>0512-3158490, 9839034107</span>
+            <span>0512-3158490 , 9839034107 , 9415131816</span>
           </div>
           <div className="flex items-center space-x-2 text-gray-800">
             <Mail className="text-blue-600" />
@@ -95,7 +95,7 @@ const Header = () => {
               <Link
                 key={i}
                 href={item.src}
-                className="block px-4 py-3 border-b hover:bg-gray-100 last:border-none text-sm">
+                className="block px-4 py-3 border-b hover:bg-gray-100 last:border-none text-sm hover:rounded-xl">
                 {item.label}
               </Link>
             ))}
@@ -174,7 +174,7 @@ const Header = () => {
               className="text-blue-600"
               size={16}
             />
-            <span>0512-3158490</span>
+            <span>0512-3158490 , 9839034107 , 9415131816</span>
           </div>
           <div className="flex items-center space-x-2">
             <Mail
