@@ -140,7 +140,7 @@ const DetailAboutUs = () => {
         variants={fadeUp}>
         <div className="border-l-4 border-blue-700 pl-6 text-lg font-medium text-gray-700">
           <p className="mb-4">
-            “In August 1982, CA Rakesh Mittal, CA Akshay Kumar Gupta laid the foundation of Mittal Gupta & Co. with a
+            “In August 1982, CA Rakesh Mittal and CA Akshay Kumar Gupta laid the foundation of Mittal Gupta & Co. with a
             vision to deliver excellence in Accounting, Auditing, Taxation, Assurance, and Business Advisory Services.”
           </p>
         </div>

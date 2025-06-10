@@ -1,31 +1,43 @@
 "use client";
 
 import Image from "next/image";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
 
 const Welcome = () => {
+  const images = [
+    { id: 1, src: "/1.jpeg" },
+    { id: 2, src: "/2.png" },
+    { id: 3, src: "/3.jpeg" },
+    { id: 4, src: "/4.jpeg" },
+    { id: 5, src: "/5.jpeg" },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div
-      className="relative w-full h-[400px] sm:h-[500px] md:h-[650px]"
+      className="relative w-full h-[400px] sm:h-[500px] md:h-[650px] overflow-hidden"
       id="home">
-      <Image
-        src="/welcome.png"
-        alt="Welcome"
-        fill
-        className="object-cover"
-        priority
-      />
-
-      <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-        <motion.h1
-          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-black drop-shadow-md"
-          initial={{ x: -200, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}>
-          Welcome to Mittal Gupta & Co.
-        </motion.h1>
-      </div>
+      {images.map((image, index) => (
+        <Image
+          key={image.id}
+          src={image.src}
+          alt={`Image ${image.id}`}
+          fill
+          sizes="100vw"
+          className={`object-cover transition-opacity duration-1000 ${
+            index === currentIndex ? "opacity-100" : "opacity-0"
+          }`}
+        />
+      ))}
     </div>
   );
 };
