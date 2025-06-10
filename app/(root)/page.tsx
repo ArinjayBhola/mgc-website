@@ -1,4 +1,5 @@
 import AboutUs from "../_Components/AboutUs";
+import Banner from "../_Components/Banner";
 import Footer from "../_Components/Footer";
 import Header from "../_Components/Header";
 import Sector from "../_Components/Sector";
@@ -13,6 +14,7 @@ export default function Home() {
       <AboutUs />
       <WhatWeOffer />
       <Sector />
+      <Banner />
       <Footer />
     </div>
   );

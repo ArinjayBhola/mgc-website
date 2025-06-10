@@ -22,6 +22,11 @@ const OurTeam = () => {
       image: "/bihari lal gupta_page-0001.jpg",
     },
     {
+      name: "Arpit Gupta",
+      position: "Senior Partner",
+      image: "/arpit gupta_page-0001.jpg",
+    },
+    {
       name: "Pankaj Agarwal",
       position: "Working Partner",
       image: "/pankaj agarwal.jpg",
@@ -41,11 +46,7 @@ const OurTeam = () => {
       position: "Working Partner",
       image: "/fiza gupta.jpg",
     },
-    {
-      name: "Arpit Gupta",
-      position: "Working Partner",
-      image: "/arpit gupta_page-0001.jpg",
-    },
+
     {
       name: "Alok Tandon",
       position: "Working Partner",

@@ -55,7 +55,7 @@ const SectionWithCards: React.FC<SectionWithCardsProps> = ({
       <motion.div
         className="max-w-5xl mx-auto text-center mb-16"
         variants={fadeUp}>
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-500">
+        <h1 className="text-5xl pb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-500">
           {sectionTitle}
         </h1>
         <p className="mt-5 text-gray-700 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">{sectionDescription}</p>
@@ -69,9 +69,6 @@ const SectionWithCards: React.FC<SectionWithCardsProps> = ({
             key={index}
             className="relative group bg-white/50 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
             variants={fadeUp}>
-            <div className="absolute -top-4 -left-4 bg-gradient-to-r from-sky-500 to-blue-600 text-white px-4 py-1 rounded-br-xl text-sm font-semibold shadow-lg">
-              {`0${index + 1}`}
-            </div>
             <h2 className="text-2xl font-bold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors duration-200">
               {card.title}
             </h2>

@@ -26,7 +26,7 @@ const page = () => {
       <SectionWithCards
         id="risk-mitigation"
         sectionTitle="Risk Mitigation"
-        sectionDescription="In a world of global ambitions and constantly evolving markets, exposure to risk is inevitable. At MGCo., our team offers comprehensive expertise in risk assessment, management, and mitigation—ensuring our clients are always prepared, resilient, and safeguarded against uncertainty."
+        sectionDescription="In a world of global ambitions and constantly evolving markets, exposure to risk is inevitable. At MGCO., our team offers comprehensive expertise in risk assessment, management, and mitigation—ensuring our clients are always prepared, resilient, and safeguarded against uncertainty."
         cards={cards}
       />
       <Footer />

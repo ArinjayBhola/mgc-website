@@ -21,31 +21,37 @@ const Header = () => {
   ];
 
   const WhatWeOfferDropdownData = [
+    { label: "Advisory Services", src: "/services/advisory-services" },
     { label: "Audit and Assurance", src: "/services/audit-and-assurance" },
     { label: "Book Keeping and Outsourcing", src: "/services/bookkeeping-and-outsourcing" },
     { label: "Domestic Taxation and International Taxation", src: "/services/domestic-and-international-taxation" },
     { label: "Goods and Service Tax", src: "/services/goods-and-services-tax" },
     { label: "IFC Services", src: "/services/ifc-services" },
-    { label: "Advisory Services", src: "/services/advisory-services" },
-    { label: "Transaction Advisory", src: "/services/transaction-advisory" },
-    { label: "Startup Advisory", src: "/services/startup-advisory" },
-    { label: "Litigation", src: "/services/litigation" },
-    { label: "Transfer Pricing", src: "/services/transfer-pricing" },
     { label: "Investment and Capex Related Decision Making", src: "/services/investment-and-capex" },
+    { label: "Litigation", src: "/services/litigation" },
+    { label: "Startup Advisory", src: "/services/startup-advisory" },
     { label: "Risk Mitigation", src: "/services/risk-mitigation" },
+    { label: "Transaction Advisory", src: "/services/transaction-advisory" },
+    { label: "Transfer Pricing", src: "/services/transfer-pricing" },
   ];
 
   return (
-    <div className="sticky top-0 z-50 bg-white shadow-2xl">
+    <div className="sticky top-0 z-50 bg-[#e3d5cf] shadow-2xl">
       {/* Top Bar */}
-      <div className="flex justify-between items-center px-4 py-2">
+      <div className="flex justify-between items-center px-4">
         <Link href={"/"}>
-          <div className="text-2xl font-semibold text-gray-800">Mittal Gupta & Co.</div>
+          <Image
+            src="/logo.svg"
+            alt="Logo"
+            width={300}
+            height={300}
+          />
+          {/* <div className="text-2xl font-semibold text-gray-800">Mittal Gupta & Co.</div> */}
         </Link>
         <div className="hidden lg:flex items-center space-x-6">
           <div className="flex items-center space-x-2 text-gray-800">
             <Phone className="text-blue-600" />
-            <span>0512-3158490 , 9839034107 , 9415131816</span>
+            <span>9415131816</span>
           </div>
           <div className="flex items-center space-x-2 text-gray-800">
             <Mail className="text-blue-600" />
@@ -56,7 +62,6 @@ const Header = () => {
             alt="CA Logo"
             width={40}
             height={40}
-            className="rounded-full"
           />
         </div>
 
@@ -129,7 +134,7 @@ const Header = () => {
         <div
           onClick={() => scrollToSection("projects")}
           className="cursor-pointer hover:text-black">
-          Blog
+          <Link href="/blogs">Blog</Link>
         </div>
         <div
           onClick={() => scrollToSection("sectors")}
@@ -139,7 +144,7 @@ const Header = () => {
         <div
           onClick={() => scrollToSection("projects")}
           className="cursor-pointer hover:text-black">
-          Contact Us
+          <Link href="/contact">Contact Us</Link>
         </div>
       </div>
 
@@ -156,7 +161,6 @@ const Header = () => {
               alt="Logo"
               width={40}
               height={40}
-              className="rounded-full"
             />
             <div className="text-lg font-semibold text-gray-800">Mittal Gupta & Co.</div>
           </div>
@@ -174,7 +178,7 @@ const Header = () => {
               className="text-blue-600"
               size={16}
             />
-            <span>0512-3158490 , 9839034107 , 9415131816</span>
+            <span>9415131816</span>
           </div>
           <div className="flex items-center space-x-2">
             <Mail
@@ -222,13 +226,17 @@ const Header = () => {
           </div>
 
           <div>
-            <div className="font-medium text-blue-800 mb-1">Blog</div>
+            <div className="font-medium text-blue-800 mb-1">
+              <Link href="/blogs">Blog</Link>
+            </div>
           </div>
           <div>
             <div className="font-medium text-blue-800 mb-1">Sector</div>
           </div>
           <div>
-            <div className="font-medium text-blue-800 mb-1">Contact Us</div>
+            <div className="font-medium text-blue-800 mb-1">
+              <Link href="/contact">Contact Us</Link>
+            </div>
           </div>
         </div>
       </div>

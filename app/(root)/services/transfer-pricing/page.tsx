@@ -25,7 +25,7 @@ const page = () => {
         id="transfer-pricing"
         sectionTitle="Transfer Pricing"
         sectionDescription="Transfer Pricing (TP) refers to the pricing of goods, services, or intangibles transferred between related entities (associated enterprises), especially across international borders. Since these transactions can affect how much tax is paid in different jurisdictions, Indian tax authorities enforce strict TP regulations.
-MGCo provides specialized transfer pricing services to help businesses comply with regulations, manage tax risks, and avoid penalties."
+MGCO provides specialized transfer pricing services to help businesses comply with regulations, manage tax risks, and avoid penalties."
         cards={cards}
       />
       <Footer />

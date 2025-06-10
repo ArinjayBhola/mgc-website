@@ -44,7 +44,7 @@ Used for deal pricing, negotiations, and regulatory filings (e.g., under FEMA, I
       <SectionWithCards
         id="transaction-advisory"
         sectionTitle="Transaction Advisory"
-        sectionDescription="Transaction Advisory is a specialized service offered by MGCo that helps businesses navigate the complex financial, legal, and tax aspects of corporate transactions such as Mergers, acquisitions, joint ventures, investments, demergers and divestitures.
+        sectionDescription="Transaction Advisory is a specialized service offered by MGCO that helps businesses navigate the complex financial, legal, and tax aspects of corporate transactions such as Mergers, acquisitions, joint ventures, investments, demergers and divestitures.
 These services are crucial for ensuring that a transaction is financially sound, legally compliant, and strategically beneficial for all parties involved."
         cards={cards}
       />

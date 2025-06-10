@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { Building2, BadgeCheck, Users2, X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-// Fade-up variant for reusability
+// Fade-up variant
 const fadeUp = {
   hidden: { opacity: 0, y: 50 },
   visible: (i = 0) => ({
@@ -14,7 +14,7 @@ const fadeUp = {
   }),
 };
 
-// Modal animation variant
+// Modal animation
 const modalVariants = {
   hidden: { opacity: 0, scale: 0.95 },
   visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } },
@@ -26,7 +26,7 @@ const cardDetails = [
     title: "Who We Are",
     icon: <Building2 className="h-10 w-10 text-blue-600 mb-4" />,
     short:
-      "With  43 years of history, Mittal Gupta & Co has been one of Kanpur's prominent Chartered Accountancy firms... Read more",
+      "With  43 years of history, Mittal Gupta & Co has been one of Kanpur's prominent Chartered Accountancy firms",
     full: `With  43 years of history, Mittal Gupta & Co has been one of Kanpur's prominent Chartered Accountancy firms providing wide array of financial and advisory services to reputed Indian companies.
 Following a top-notch corporate culture, we believe in delivering accurate, relevant, and timely information to the decision-makers using industry expertise. We help companies to stay compliant and lawful. We aim at applying intelligence and expertise by providing realistic solutions to complicated business scenarios using analytical skills, functional expertise and intensive training. Our result-oriented and success-driven partners believe in providing equal services to clients of all sizes and at all locations.`,
   },
@@ -34,23 +34,37 @@ Following a top-notch corporate culture, we believe in delivering accurate, rele
     title: "What We Do",
     icon: <BadgeCheck className="h-10 w-10 text-green-600 mb-4" />,
     short:
-      "With over 40 years of experience, we partner with clients across industries, services, and operational levels to drive... Read more",
+      "With over 40 years of experience, we partner with clients across industries, services, and operational levels to drive",
     full: `With over 40 years of experience, we partner with clients across industries, services, and operational levels to drive excellence at every step. Backed by deep professional expertise and a multidisciplinary team, we are committed to shared growth—because our clients' success is our greatest achievement.`,
   },
   {
     title: "Our Values",
     icon: <Users2 className="h-10 w-10 text-indigo-600 mb-4" />,
-    short: "Our enduring reputation is rooted in the foundational values of Mittal Gupta and Co. ... Read more",
+    short: "Our enduring reputation is rooted in the foundational values of Mittal Gupta and Co",
     full: `Our enduring reputation is rooted in the foundational values of Mittal Gupta and Co., which continue to shape both our success and that of our clients. Guided by unwavering commitment, principled integrity, and a deep sense of purpose, our professional team remains steadfast in upholding these values—ensuring they propel us confidently into the future.`,
+  },
+];
+
+const visionMissionDetails = [
+  {
+    title: "Our Vision",
+    short: "To be a trusted and forward-thinking Chartered Accountancy firm recognized for excellence",
+    full: `To be a trusted and forward-thinking Chartered Accountancy firm in India, recognized for excellence in professional services, ethical standards, and long-standing client relationships that foster sustainable growth and innovation.`,
+  },
+  {
+    title: "Our Mission",
+    short: "To deliver high-quality, value-driven services while upholding the highest standards of integrity",
+    full: `To deliver high-quality, value-driven financial, assurance, tax, and advisory services to clients across industries, while upholding the highest standards of integrity, accountability, and professionalism. We are committed to empowering businesses and individuals with sound financial insights, fostering trust, and contributing to the nation’s economic development.`,
   },
 ];
 
 const DetailAboutUs = () => {
   const [selected, setSelected] = useState<null | number>(null);
+  const [vmSelected, setVmSelected] = useState<null | number>(null);
 
   return (
     <div className="bg-white text-gray-800">
-      {/* Hero Section */}
+      {/* Hero */}
       <motion.section
         className="bg-gradient-to-r from-gray-100 to-blue-100 py-20 text-center px-6"
         initial="hidden"
@@ -64,7 +78,7 @@ const DetailAboutUs = () => {
         </motion.p>
       </motion.section>
 
-      {/* Cards Section */}
+      {/* Cards */}
       <section className="max-w-6xl mx-auto py-20 px-6 grid gap-10 md:grid-cols-3">
         {cardDetails.map((card, i) => (
           <motion.div
@@ -80,24 +94,23 @@ const DetailAboutUs = () => {
             onClick={() => setSelected(i)}>
             {card.icon}
             <h3 className="text-2xl font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-600">{card.short}</p>
+            <p className="text-gray-600">
+              {card.short}... <span className="text-blue-500 underline">Read more</span>
+            </p>
           </motion.div>
         ))}
       </section>
 
-      {/* Modal Popup with Blur Background */}
+      {/* Modal for Main Cards */}
       <AnimatePresence>
         {selected !== null && (
           <>
-            {/* Background Blur */}
             <motion.div
               className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             />
-
-            {/* Modal Content */}
             <motion.div
               className="fixed inset-0 z-50 flex items-center justify-center px-4"
               initial="hidden"
@@ -118,7 +131,7 @@ const DetailAboutUs = () => {
         )}
       </AnimatePresence>
 
-      {/* Legacy Section */}
+      {/* Legacy */}
       <motion.section
         className="max-w-4xl mx-auto px-6 mb-20"
         initial="hidden"
@@ -127,14 +140,13 @@ const DetailAboutUs = () => {
         variants={fadeUp}>
         <div className="border-l-4 border-blue-700 pl-6 text-lg font-medium text-gray-700">
           <p className="mb-4">
-            “In August 1982, Mr. Rakesh Mittal, Mr. Ajay Kumar Gupta, and Mr. Akshay Kumar Gupta laid the foundation of
-            Mittal Gupta & Co. with a vision to deliver excellence in Accounting, Auditing, Taxation, Assurance, and
-            Business Advisory Services.”
+            “In August 1982, CA Rakesh Mittal, CA Akshay Kumar Gupta laid the foundation of Mittal Gupta & Co. with a
+            vision to deliver excellence in Accounting, Auditing, Taxation, Assurance, and Business Advisory Services.”
           </p>
         </div>
       </motion.section>
 
-      {/* Vision & Mission */}
+      {/* Vision & Mission Cards */}
       <section className="bg-gray-50 py-20 px-6">
         <motion.h2
           className="text-4xl font-bold text-center mb-10"
@@ -146,26 +158,25 @@ const DetailAboutUs = () => {
         </motion.h2>
 
         <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-          {["Our Vision", "Our Mission"].map((title, i) => (
+          {visionMissionDetails.map((item, i) => (
             <motion.div
               key={i}
-              className="bg-white shadow-md rounded-xl p-6"
+              className="bg-white shadow-md rounded-xl p-6 cursor-pointer hover:shadow-xl transition"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeUp}
-              custom={i}>
-              <h3 className="text-2xl font-semibold mb-4 text-blue-700">{title}</h3>
+              custom={i}
+              onClick={() => setVmSelected(i)}>
+              <h3 className="text-2xl font-semibold mb-4 text-blue-700">{item.title}</h3>
               <p className="text-gray-700">
-                {i === 0
-                  ? "To be a trusted and forward-thinking Chartered Accountancy firm recognized for excellence..."
-                  : "To deliver high-quality, value-driven services while upholding the highest standards of integrity..."}
+                {item.short}... <span className="text-blue-500 underline">Read more</span>
               </p>
             </motion.div>
           ))}
         </div>
 
-        {/* Objectives List */}
+        {/* Objectives */}
         <motion.div
           className="mt-12 max-w-4xl mx-auto"
           initial="hidden"
@@ -183,6 +194,36 @@ const DetailAboutUs = () => {
           </ul>
         </motion.div>
       </section>
+
+      {/* Modal for Vision/Mission */}
+      <AnimatePresence>
+        {vmSelected !== null && (
+          <>
+            <motion.div
+              className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            />
+            <motion.div
+              className="fixed inset-0 z-50 flex items-center justify-center px-4"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={modalVariants}>
+              <div className="bg-white p-6 rounded-lg max-w-lg w-full relative shadow-2xl">
+                <button
+                  onClick={() => setVmSelected(null)}
+                  className="absolute top-3 right-3 text-gray-600 hover:text-red-600 transition">
+                  <X className="w-6 h-6" />
+                </button>
+                <h2 className="text-2xl font-bold mb-4">{visionMissionDetails[vmSelected].title}</h2>
+                <p className="text-gray-700 whitespace-pre-line">{visionMissionDetails[vmSelected].full}</p>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
 
       {/* Callout */}
       <motion.section

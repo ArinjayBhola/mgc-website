@@ -29,7 +29,7 @@ By offering comprehensive IFC services, our CA firm ensures that clients not onl
       <SectionWithCards
         id="ifc-services"
         sectionTitle="IFC Services"
-        sectionDescription="MGCo offers specialized Internal Financial Control (IFC) services to help organizations strengthen their internal processes, ensure compliance with legal requirements, and enhance operational efficiency. Under Section 134(5)(e) of the Companies Act, 2013, certain companies are required to establish and maintain adequate IFC systems, making this an essential area of focus for growing businesses."
+        sectionDescription="MGCO offers specialized Internal Financial Control (IFC) services to help organizations strengthen their internal processes, ensure compliance with legal requirements, and enhance operational efficiency. Under Section 134(5)(e) of the Companies Act, 2013, certain companies are required to establish and maintain adequate IFC systems, making this an essential area of focus for growing businesses."
         cards={cards}
       />
       <Footer />

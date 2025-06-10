@@ -52,7 +52,7 @@ const page = () => {
       <SectionWithCards
         id="advisory-services"
         sectionTitle="Advisory Services"
-        sectionDescription="MGCo offers a wide range of advisory services tailored to businesses, individuals, startups, and multinational corporations. These services go beyond basic compliance and accounting functions, aiming to enhance clients' decision-making, efficiency, and financial health."
+        sectionDescription="MGCO offers a wide range of advisory services tailored to businesses, individuals, startups, and multinational corporations. These services go beyond basic compliance and accounting functions, aiming to enhance clients' decision-making, efficiency, and financial health."
         cards={cards}
       />
       <Footer />
