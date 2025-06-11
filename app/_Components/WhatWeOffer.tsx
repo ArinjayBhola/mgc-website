@@ -133,21 +133,21 @@ const WhatWeOffer = () => {
               exit="exit"
               className="flex flex-col md:flex-row justify-center items-center md:items-start gap-6 md:gap-8">
               {visibleItems.map((item, index) => (
-                <div
+                <Link
                   key={index}
-                  className="w-full max-w-xs md:max-w-none md:w-[380px] h-auto md:h-[380px] bg-white border rounded-xl shadow-xl hover:shadow-2xl transition p-4 sm:p-5 md:p-6 flex flex-col items-center justify-between text-center">
-                  <Monitor
-                    size={52}
-                    className="text-gray-800 mb-3 sm:mb-4"
-                  />
-                  <h3 className="text-lg sm:text-xl font-semibold mb-2">{item.topic}</h3>
-                  <p className="text-sm text-gray-600 mb-4">{item.desc}</p>
-                  <Link href={item.src}>
-                    <button className="mt-auto px-5 py-2 text-sm font-semibold text-white bg-blue-700 rounded-md hover:bg-blue-900 transition-colors duration-300 cursor-pointer">
-                      Read More
-                    </button>
-                  </Link>
-                </div>
+                  href={item.src}
+                  className="contents">
+                  <div className="w-full max-w-xs md:max-w-none md:w-[380px] h-auto md:h-[380px] bg-white border rounded-xl shadow-xl hover:shadow-2xl transition p-4 sm:p-5 md:p-6 flex flex-col items-center justify-between text-center cursor-pointer">
+                    <div className="flex flex-col items-center gap-y-4 flex-grow">
+                      <Monitor
+                        size={52}
+                        className="text-gray-800 mb-3 sm:mb-4"
+                      />
+                      <h3 className="text-lg sm:text-xl font-semibold mb-2">{item.topic}</h3>
+                      <p className="text-sm text-gray-600 mb-4">{item.desc}</p>
+                    </div>
+                  </div>
+                </Link>
               ))}
             </motion.div>
           </AnimatePresence>
@@ -164,7 +164,7 @@ const WhatWeOffer = () => {
         </button>
       </div>
 
-      {/* Tracker Dots */}
+      {/* Dots */}
       <div className="mt-8 flex justify-center space-x-2">
         {Array.from({ length: totalPages }).map((_, idx) => (
           <span

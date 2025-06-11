@@ -1,3 +1,4 @@
+import Banner from "@/app/_Components/Banner";
 import Footer from "@/app/_Components/Footer";
 import Header from "@/app/_Components/Header";
 import OurTeam from "@/app/_Components/OurTeam";
@@ -8,6 +9,7 @@ const page = () => {
     <div>
       <Header />
       <OurTeam />
+      <Banner />
       <Footer />
     </div>
   );

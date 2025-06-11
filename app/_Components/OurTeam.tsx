@@ -23,7 +23,7 @@ const OurTeam = () => {
     },
     {
       name: "Arpit Gupta",
-      position: "Senior Partner",
+      position: "Senior Manager",
       image: "/arpit gupta_page-0001.jpg",
     },
     {

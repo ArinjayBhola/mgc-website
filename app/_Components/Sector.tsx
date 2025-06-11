@@ -1,29 +1,50 @@
 "use client";
 
 import React from "react";
-import { Briefcase, Building, Settings, Users } from "lucide-react";
+import {
+  Building,
+  CarFront,
+  Computer,
+  Cpu,
+  CreditCard,
+  Diamond,
+  Factory,
+  Globe,
+  Hammer,
+  Hotel,
+  Package,
+  Plane,
+  Power,
+  Shield,
+  ShoppingCart,
+  TestTube2,
+  Truck,
+  Wallet,
+  Warehouse,
+  Wifi,
+} from "lucide-react";
 
 const sectors = [
-  { name: "Sugar Manufacturing", icon: <Settings size={28} /> },
-  { name: "Retail & Consumer Markets", icon: <Users size={28} /> },
-  { name: "Automotive Sector", icon: <Briefcase size={28} /> },
-  { name: "Power & Distribution", icon: <Building size={28} /> },
-  { name: "Insurance & Risk", icon: <Briefcase size={28} /> },
-  { name: "Technology", icon: <Settings size={28} /> },
+  { name: "Sugar Manufacturing", icon: <Factory size={28} /> },
+  { name: "Retail & Consumer Markets", icon: <ShoppingCart size={28} /> },
+  { name: "Automotive Sector", icon: <CarFront size={28} /> },
+  { name: "Power & Distribution", icon: <Power size={28} /> },
+  { name: "Insurance & Risk", icon: <Shield size={28} /> },
+  { name: "Technology", icon: <Cpu size={28} /> },
   { name: "Infrastructure", icon: <Building size={28} /> },
-  { name: "Telecom & Communication", icon: <Users size={28} /> },
-  { name: "Jewellery Industry", icon: <Briefcase size={28} /> },
-  { name: "Banking & Finance", icon: <Building size={28} /> },
-  { name: "Hospitality Services", icon: <Users size={28} /> },
-  { name: "Engineering Services", icon: <Settings size={28} /> },
-  { name: "Defence & Aerospace", icon: <Briefcase size={28} /> },
-  { name: "IT Services", icon: <Settings size={28} /> },
-  { name: "FMCG", icon: <Users size={28} /> },
-  { name: "Agro-Chemical", icon: <Building size={28} /> },
-  { name: "PSUs", icon: <Briefcase size={28} /> },
-  { name: "Realty Sector", icon: <Building size={28} /> },
-  { name: "Manufacturing", icon: <Settings size={28} /> },
-  { name: "D2C Brands", icon: <Users size={28} /> },
+  { name: "Telecom & Communication", icon: <Wifi size={28} /> },
+  { name: "Jewellery Industry", icon: <Diamond size={28} /> },
+  { name: "Banking & Finance", icon: <Wallet size={28} /> },
+  { name: "Hospitality Services", icon: <Hotel size={28} /> },
+  { name: "Engineering Services", icon: <Hammer size={28} /> },
+  { name: "Defence & Aerospace", icon: <Plane size={28} /> },
+  { name: "IT Services", icon: <Computer size={28} /> },
+  { name: "FMCG", icon: <Package size={28} /> },
+  { name: "Agro-Chemical", icon: <TestTube2 size={28} /> },
+  { name: "PSUs", icon: <Globe size={28} /> },
+  { name: "Realty Sector", icon: <Warehouse size={28} /> },
+  { name: "Manufacturing", icon: <Truck size={28} /> },
+  { name: "D2C Brands", icon: <CreditCard size={28} /> },
 ];
 
 const SectorsPage = () => {
@@ -36,7 +57,7 @@ const SectorsPage = () => {
           Sectors
         </h2>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-6 sm:gap-8">
           {sectors.map((sector, idx) => (
             <div
               key={idx}

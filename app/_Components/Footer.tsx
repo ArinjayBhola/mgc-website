@@ -50,7 +50,7 @@ const Footer = () => {
               className="mt-1 text-[#f7954d]"
             />
             <div>
-              <p className="text-gray-300">0512-3158490, 80908 58505, 9415131816</p>
+              <p className="text-gray-300">0512-3158490, 8090858505, 9415131816</p>
             </div>
           </div>
 

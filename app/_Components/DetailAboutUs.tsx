@@ -94,9 +94,7 @@ const DetailAboutUs = () => {
             onClick={() => setSelected(i)}>
             {card.icon}
             <h3 className="text-2xl font-semibold mb-2">{card.title}</h3>
-            <p className="text-gray-600">
-              {card.short}... <span className="text-blue-500 underline">Read more</span>
-            </p>
+            <p className="text-gray-600">{card.short}... Read more</p>
           </motion.div>
         ))}
       </section>
@@ -169,9 +167,7 @@ const DetailAboutUs = () => {
               custom={i}
               onClick={() => setVmSelected(i)}>
               <h3 className="text-2xl font-semibold mb-4 text-blue-700">{item.title}</h3>
-              <p className="text-gray-700">
-                {item.short}... <span className="text-blue-500 underline">Read more</span>
-              </p>
+              <p className="text-gray-700">{item.short}... Read more</p>
             </motion.div>
           ))}
         </div>

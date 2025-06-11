@@ -58,7 +58,9 @@ const SectionWithCards: React.FC<SectionWithCardsProps> = ({
         <h1 className="text-5xl pb-3 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-sky-500">
           {sectionTitle}
         </h1>
-        <p className="mt-5 text-gray-700 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto">{sectionDescription}</p>
+        <p className="mt-5 text-gray-700 text-lg md:text-xl leading-relaxed max-w-3xl mx-auto text-left">
+          {sectionDescription}
+        </p>
       </motion.div>
 
       <motion.div
