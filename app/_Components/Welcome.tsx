@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 const Welcome = () => {
   const images = [
     { id: 1, src: "/1.jpeg" },
-    { id: 2, src: "/2.png" },
+    { id: 2, src: "/2.jpg" },
     { id: 3, src: "/3.jpeg" },
     { id: 4, src: "/4.jpeg" },
     { id: 5, src: "/5.jpeg" },
