@@ -21,6 +21,34 @@ const page = () => {
 
 By offering comprehensive IFC services, our CA firm ensures that clients not only meet statutory obligations but also build a strong control environment that enhances financial integrity, reduces risk, and supports long-term business sustainability.`,
     },
+    {
+      title: "Risk Control Matrix (RCM):",
+      description: `A Risk Control Matrix (RCM) is a structured tool used to:
+	
+-	Identify risks associated with business processes.
+-	Define control objectives to address those risks.
+-	Map actual controls implemented by the company.
+-	Evaluate the design and operating effectiveness of those controls.
+	
+	It is central to implementing and evaluating Internal Financial Controls (IFC) as per the Companies Act, 2013, especially Section 134(5)(e).
+	
+	The risk column in the RCM lists specific risks for each process activity.
+	
+	RCM captures:
+	Control objective
+	Control description (e.g., invoice matching before payment)
+	Type of control (preventive/detective, manual/system)
+	
+	RCM is updated with:
+	Control deficiencies
+	Suggested remediation
+	Target completion dates
+	
+	RCM provides auditable evidence of control performance and is be used by  auditors for their own IFC opinion.
+	
+	We work closely with our clients to build Risk Control Matrices that align with their operations and help ensure robust internal financial controls.
+`,
+    },
   ];
 
   return (
@@ -28,7 +56,7 @@ By offering comprehensive IFC services, our CA firm ensures that clients not onl
       <Header />
       <SectionWithCards
         id="ifc-services"
-        sectionTitle="IFC Services"
+        sectionTitle="IFC and Risk Control Services"
         sectionDescription="MGCO offers specialized Internal Financial Control (IFC) services to help organizations strengthen their internal processes, ensure compliance with legal requirements, and enhance operational efficiency. Under Section 134(5)(e) of the Companies Act, 2013, certain companies are required to establish and maintain adequate IFC systems, making this an essential area of focus for growing businesses."
         cards={cards}
       />

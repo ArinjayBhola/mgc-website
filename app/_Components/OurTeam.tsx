@@ -21,11 +21,7 @@ const OurTeam = () => {
       position: "Lead Partner",
       image: "/bihari lal gupta_page-0001.jpg",
     },
-    {
-      name: "Arpit Gupta",
-      position: "Senior Manager",
-      image: "/arpit gupta_page-0001.jpg",
-    },
+
     {
       name: "Pankaj Agarwal",
       position: "Working Partner",
@@ -53,8 +49,13 @@ const OurTeam = () => {
       image: "/Photos-Alok_Tandon.jpg",
     },
     {
+      name: "Arpit Gupta",
+      position: "Senior Manager",
+      image: "/arpit gupta_page-0001.jpg",
+    },
+    {
       name: "Rajeev Krishnan Purwar",
-      position: "Working Partner",
+      position: "Audit Manager",
       image: "/team-member-3.jpg",
     },
   ];

@@ -5,11 +5,11 @@ import React, { useEffect, useState } from "react";
 
 const Welcome = () => {
   const images = [
-    { id: 1, src: "/1.jpeg" },
+    { id: 1, src: "/1.jpg" },
     { id: 2, src: "/2.jpg" },
     { id: 3, src: "/3.jpeg" },
     { id: 4, src: "/4.jpeg" },
-    { id: 5, src: "/5.jpeg" },
+    { id: 5, src: "/5.jpg" },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,7 +24,7 @@ const Welcome = () => {
 
   return (
     <div
-      className="relative w-full h-[400px] sm:h-[500px] md:h-[650px] overflow-hidden"
+      className="relative w-full h-[450px] sm:h-[450px] md:h-[550px] overflow-hidden"
       id="home">
       {images.map((image, index) => (
         <Image

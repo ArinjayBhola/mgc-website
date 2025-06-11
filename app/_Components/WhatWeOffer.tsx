@@ -32,7 +32,7 @@ const WhatWeOfferData = [
     desc: "GST services include registration, return filing, input tax credit reconciliation, audit support, and compliance management. We advise on GST implications, handle notices, and assist with litigation, helping businesses comply with GST laws and optimize their tax positions effectively.",
   },
   {
-    topic: "IFC Services",
+    topic: "IFC and Risk Control Services",
     src: "/services/ifc-services",
     desc: "IFC and risk control services involve identifying business risks, designing and implementing internal controls, and preparing Risk Control Matrices. CA firms assess control effectiveness, ensure compliance, prevent fraud, and enhance financial reporting accuracy and operational efficiency for better governance.",
   },

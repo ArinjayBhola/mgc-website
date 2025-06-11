@@ -26,7 +26,7 @@ const Header = () => {
     { label: "Book Keeping and Outsourcing", src: "/services/bookkeeping-and-outsourcing" },
     { label: "Domestic Taxation and International Taxation", src: "/services/domestic-and-international-taxation" },
     { label: "Goods and Service Tax", src: "/services/goods-and-services-tax" },
-    { label: "IFC Services", src: "/services/ifc-services" },
+    { label: "IFC and Risk Control Services", src: "/services/ifc-services" },
     { label: "Investment and Capex Related Decision Making", src: "/services/investment-and-capex" },
     { label: "Litigation", src: "/services/litigation" },
     { label: "Startup Advisory", src: "/services/startup-advisory" },
@@ -39,15 +39,29 @@ const Header = () => {
     <div className="sticky top-0 z-50 bg-[#e3d5cf] shadow-2xl">
       {/* Top Bar */}
       <div className="flex justify-between items-center px-4">
-        <Link href={"/"}>
-          <Image
-            src="/logo.png"
-            alt="Logo"
-            width={300}
-            height={300}
-          />
-          {/* <div className="text-2xl font-semibold text-gray-800">Mittal Gupta & Co.</div> */}
-        </Link>
+        {/* Left logos */}
+        <div className="flex items-center space-x-2">
+          {/* CA Logo - only on large screens */}
+          <div className="hidden lg:block">
+            <Image
+              src="/ca-logo.jpg"
+              alt="CA Logo"
+              width={40}
+              height={40}
+            />
+          </div>
+          {/* Main Logo */}
+          <Link href="/">
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={300}
+              height={300}
+            />
+          </Link>
+        </div>
+
+        {/* Contact Info */}
         <div className="hidden lg:flex items-center space-x-6">
           <div className="flex items-center space-x-2 text-gray-800">
             <Phone className="text-blue-600" />
@@ -57,12 +71,6 @@ const Header = () => {
             <Mail className="text-blue-600" />
             <span>mgco@mgcoca.in</span>
           </div>
-          <Image
-            src="/ca-logo.jpg"
-            alt="CA Logo"
-            width={40}
-            height={40}
-          />
         </div>
 
         {/* Mobile Menu Button */}
@@ -132,14 +140,14 @@ const Header = () => {
         </div>
 
         <div
+          onClick={() => scrollToSection("sectors")}
+          className="cursor-pointer hover:text-black">
+          <Link href={"/#sectors"}>Sector</Link>
+        </div>
+        <div
           onClick={() => scrollToSection("projects")}
           className="cursor-pointer hover:text-black">
           <Link href="/blogs">Blog</Link>
-        </div>
-        <div
-          onClick={() => scrollToSection("sectors")}
-          className="cursor-pointer hover:text-black">
-          Sector
         </div>
         <div
           onClick={() => scrollToSection("projects")}
@@ -226,12 +234,12 @@ const Header = () => {
           </div>
 
           <div>
+            <div className="font-medium text-blue-800 mb-1">Sector</div>
+          </div>
+          <div>
             <div className="font-medium text-blue-800 mb-1">
               <Link href="/blogs">Blog</Link>
             </div>
-          </div>
-          <div>
-            <div className="font-medium text-blue-800 mb-1">Sector</div>
           </div>
           <div>
             <div className="font-medium text-blue-800 mb-1">

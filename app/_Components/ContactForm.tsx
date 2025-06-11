@@ -19,7 +19,10 @@ export default function ContactForm() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-10">
       <h2 className="text-3xl font-semibold mb-2">Send Us a Message</h2>
-      <p className="text-gray-600 mb-6">Please fill in the form below to get in touch with us.</p>
+      <p className="text-gray-600 mb-6">
+        Connect with us to learn how we can support your financial goals—or to discover exciting career opportunities
+        within our growing team.
+      </p>
 
       <form
         onSubmit={handleSubmit}
