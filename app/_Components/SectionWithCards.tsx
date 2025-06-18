@@ -64,12 +64,12 @@ const SectionWithCards: React.FC<SectionWithCardsProps> = ({
       </motion.div>
 
       <motion.div
-        className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto"
+        className={`${cards.length === 1 ? "flex justify-center" : "grid md:grid-cols-2 gap-10"} max-w-6xl mx-auto`}
         variants={containerVariants}>
         {cards.map((card, index) => (
           <motion.div
             key={index}
-            className="relative group bg-white/50 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1"
+            className="relative group bg-white/50 backdrop-blur-xl border border-gray-200 rounded-3xl p-8 shadow-xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 w-full max-w-xl"
             variants={fadeUp}>
             <h2 className="text-2xl font-bold text-blue-900 mb-4 group-hover:text-blue-600 transition-colors duration-200">
               {card.title}

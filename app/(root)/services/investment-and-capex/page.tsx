@@ -26,7 +26,7 @@ const page = () => {
       <Header />
       <SectionWithCards
         id="investment-and-capex"
-        sectionTitle="Investment and Capex Related Decision Making"
+        sectionTitle="Investment and Capex Planning"
         sectionDescription="We offer investment-related decision services to businesses, high-net-worth individuals (HNIs), startups, and institutional investors to support them in making strategic, data-driven, and financially sound investment decisions.
 These services focus on maximizing returns, minimizing risk, ensuring regulatory compliance, and aligning investments with long-term financial goals."
         cards={cards}

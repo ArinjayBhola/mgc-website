@@ -37,7 +37,7 @@ const WhatWeOfferData = [
     desc: "IFC and risk control services involve identifying business risks, designing and implementing internal controls, and preparing Risk Control Matrices. CA firms assess control effectiveness, ensure compliance, prevent fraud, and enhance financial reporting accuracy and operational efficiency for better governance.",
   },
   {
-    topic: "Investment and Capex Related Decision Making",
+    topic: "Investment and Capex Planning",
     src: "/services/investment-and-capex",
     desc: "Investment and CAPEX planning services help businesses evaluate capital expenditures and investment opportunities. We assist in budgeting, financial analysis, risk assessment, and ROI forecasting to optimize resource allocation, ensure financial viability, and support strategic growth and long-term business sustainability.",
   },
@@ -105,7 +105,9 @@ const WhatWeOffer = () => {
   };
 
   return (
-    <div className="text-center py-12 px-4 sm:px-6 lg:px-20">
+    <div
+      className="text-center py-12 px-4 sm:px-6 lg:px-20"
+      id="what-we-offer">
       <h2 className="text-3xl sm:text-4xl font-bold mb-10">What We Offer</h2>
 
       <div className="flex items-center justify-center flex-col md:flex-row md:space-x-6">

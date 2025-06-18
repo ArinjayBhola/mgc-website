@@ -27,7 +27,7 @@ const Header = () => {
     { label: "Domestic Taxation and International Taxation", src: "/services/domestic-and-international-taxation" },
     { label: "Goods and Service Tax", src: "/services/goods-and-services-tax" },
     { label: "IFC and Risk Control Services", src: "/services/ifc-services" },
-    { label: "Investment and Capex Related Decision Making", src: "/services/investment-and-capex" },
+    { label: "Investment and Capex Planning", src: "/services/investment-and-capex" },
     { label: "Litigation", src: "/services/litigation" },
     { label: "Startup Advisory", src: "/services/startup-advisory" },
     { label: "Risk Mitigation", src: "/services/risk-mitigation" },
@@ -46,8 +46,8 @@ const Header = () => {
             <Image
               src="/ca-logo.jpg"
               alt="CA Logo"
-              width={40}
-              height={40}
+              width={50}
+              height={50}
             />
           </div>
           {/* Main Logo */}

@@ -7,7 +7,9 @@ import { motion } from "framer-motion";
 
 const AboutUs = () => {
   return (
-    <section className="flex flex-col items-center justify-center px-4 py-14 bg-gradient-to-b from-white via-gray-50 to-white">
+    <section
+      id="aboutus"
+      className="flex flex-col items-center justify-center px-4 py-14 bg-gradient-to-b from-white via-gray-50 to-white">
       {/* Heading */}
       <motion.h2
         className="font-bold text-3xl sm:text-4xl text-center tracking-tight"

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 const Footer = () => {
@@ -20,12 +21,24 @@ const Footer = () => {
           {/* Quick Links Section */}
           <div className="space-y-3 pt-4">
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-gray-300">
-              <div className="hover:text-white transition-colors duration-200">Home</div>
-              <div className="hover:text-white transition-colors duration-200">About Us</div>
-              <div className="hover:text-white transition-colors duration-200">What We Offer</div>
-              <div className="hover:text-white transition-colors duration-200">Sector</div>
-              <div className="hover:text-white transition-colors duration-200">Blog</div>
-              <div className="hover:text-white transition-colors duration-200">Contact Us</div>
+              <Link href="/#home">
+                <div className="hover:text-white transition-colors duration-200">Home</div>
+              </Link>
+              <Link href="/#aboutus">
+                <div className="hover:text-white transition-colors duration-200">About Us</div>
+              </Link>
+              <Link href="/#what-we-offer">
+                <div className="hover:text-white transition-colors duration-200">What We Offer</div>
+              </Link>
+              <Link href="/#sectors">
+                <div className="hover:text-white transition-colors duration-200">Sector</div>
+              </Link>
+              <Link href="/blogs">
+                <div className="hover:text-white transition-colors duration-200">Blog</div>
+              </Link>
+              <Link href="contact">
+                <div className="hover:text-white transition-colors duration-200">Contact Us</div>
+              </Link>
             </div>
           </div>
         </div>
