@@ -26,16 +26,17 @@ const cardDetails = [
     title: "Who We Are",
     icon: <Building2 className="h-10 w-10 text-blue-600 mb-4" />,
     short:
-      "With  43 years of history, Mittal Gupta & Co has been one of Kanpur's prominent Chartered Accountancy firms",
-    full: `With  43 years of history, Mittal Gupta & Co has been one of Kanpur's prominent Chartered Accountancy firms providing wide array of financial and advisory services to reputed Indian companies.
-Following a top-notch corporate culture, we believe in delivering accurate, relevant, and timely information to the decision-makers using industry expertise. We help companies to stay compliant and lawful. We aim at applying intelligence and expertise by providing realistic solutions to complicated business scenarios using analytical skills, functional expertise and intensive training. Our result-oriented and success-driven partners believe in providing equal services to clients of all sizes and at all locations.`,
+      "Established over four decades ago, Mittal Gupta & Co. has been a trusted name in Chartered Accountancy across Uttar Pradesh and beyond",
+    full: `Established over four decades ago, Mittal Gupta & Co. has been a trusted name in Chartered Accountancy across Uttar Pradesh and beyond. Since our inception in 1982, we have remained steadfast in our commitment to ethical practice, governed by the Institute of Chartered Accountants of India (ICAI) and the provisions of the Chartered Accountants Act, 1949. As a firm registered with and regulated by ICAI, we uphold the highest standards of professional conduct, quality, and accountability. Our work is not only guided by experience and expertise but also by the rigorous regulatory framework that defines the role and responsibility of Chartered Accountants in India.`,
   },
   {
     title: "What We Do",
     icon: <BadgeCheck className="h-10 w-10 text-green-600 mb-4" />,
     short:
-      "With over 40 years of experience, we partner with clients across industries, services, and operational levels to drive",
-    full: `With over 40 years of experience, we partner with clients across industries, services, and operational levels to drive excellence at every step. Backed by deep professional expertise and a multidisciplinary team, we are committed to shared growth—because our clients' success is our greatest achievement.`,
+      "With over 40 years of experience, we serve our clients across industries, services, and operational levels to drive",
+    full: `With over 40 years of experience, we serve our clients across industries, services, and operational levels to drive excellence at every step. Backed by deep professional expertise and a multidisciplinary team, we are committed to shared growth—because our clients' success is our greatest achievement.
+Following a top-notch corporate culture, we believe in delivering accurate, relevant, and timely information to the decision-makers using industry expertise. We help companies to stay compliant and lawful and serve our clients by being their 'financial doctors'. We aim at applying intelligence and expertise by providing realistic solutions to complicated business scenarios using analytical skills, functional expertise and intensive training. Our result-oriented and success-driven partners believe in providing equal services to clients of all sizes and at all locations.
+Our long-standing relationships with clients — some spanning generations — reflect our unwavering commitment to integrity, accuracy, and client-centric service.We take pride in being more than just accountants — we are partners in progress.`,
   },
   {
     title: "Our Values",
@@ -48,12 +49,14 @@ Following a top-notch corporate culture, we believe in delivering accurate, rele
 const visionMissionDetails = [
   {
     title: "Our Vision",
-    short: "To be a trusted and forward-thinking Chartered Accountancy firm recognized for excellence",
-    full: `To be a trusted and forward-thinking Chartered Accountancy firm in India, recognized for excellence in professional services, ethical standards, and long-standing client relationships that foster sustainable growth and innovation.`,
+    short:
+      "With a legacy spanning more than 40 years, our vision is to lead the way in professional accountancy services ",
+    full: `With a legacy spanning more than 40 years, our vision is to lead the way in professional accountancy services across Uttar Pradesh by fostering a culture of continuous knowledge updation, embracing innovation, and leveraging cutting-edge technology. We strive to be the preferred advisors for our clients, delivering tailored financial solutions with integrity, agility, and strategic foresight in a fast-evolving regulatory and digital environment.`,
   },
   {
     title: "Our Mission",
-    short: "To deliver high-quality, value-driven services while upholding the highest standards of integrity",
+    short:
+      "To deliver high-quality, value-driven financial, assurance, tax, and advisory services to clients across industries",
     full: `To deliver high-quality, value-driven financial, assurance, tax, and advisory services to clients across industries, while upholding the highest standards of integrity, accountability, and professionalism. We are committed to empowering businesses and individuals with sound financial insights, fostering trust, and contributing to the nation’s economic development.`,
   },
 ];

@@ -142,7 +142,7 @@ const Header = () => {
         <div
           onClick={() => scrollToSection("sectors")}
           className="cursor-pointer hover:text-black">
-          <Link href={"/#sectors"}>Sector</Link>
+          <Link href="/#sectors">Sector</Link>
         </div>
         <div
           onClick={() => scrollToSection("projects")}
@@ -153,6 +153,12 @@ const Header = () => {
           onClick={() => scrollToSection("projects")}
           className="cursor-pointer hover:text-black">
           <Link href="/contact">Contact Us</Link>
+        </div>
+        {/* New Career Link */}
+        <div
+          onClick={() => scrollToSection("projects")}
+          className="cursor-pointer hover:text-black">
+          <Link href="/contact">Career</Link>
         </div>
       </div>
 
@@ -244,6 +250,17 @@ const Header = () => {
           <div>
             <div className="font-medium text-blue-800 mb-1">
               <Link href="/contact">Contact Us</Link>
+            </div>
+          </div>
+
+          {/* New Career Link */}
+          <div>
+            <div className="font-medium text-blue-800 mb-1">
+              <Link
+                href="/contact"
+                onClick={() => setIsMobileMenuOpen(false)}>
+                Career
+              </Link>
             </div>
           </div>
         </div>
