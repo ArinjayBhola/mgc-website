@@ -106,7 +106,7 @@ const WhatWeOffer = () => {
 
   return (
     <div
-      className="text-center py-12 px-4 sm:px-6 lg:px-20"
+      className="text-center py-12 px-4 sm:px-6 lg:px-20 scroll-mt-28"
       id="what-we-offer">
       <h2 className="text-3xl sm:text-4xl font-bold mb-10">What We Offer</h2>
 

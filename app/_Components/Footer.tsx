@@ -66,6 +66,14 @@ const Footer = () => {
                   Contact Us
                 </Link>
               </li>
+              {/* New Career Link */}
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-white transition-all duration-200 hover:underline underline-offset-4">
+                  Career
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

@@ -49,7 +49,9 @@ const sectors = [
 
 const SectorsPage = () => {
   return (
-    <div id="sectors">
+    <div
+      id="sectors"
+      className="scroll-mt-24">
       <div className="bg-gradient-to-br from-white to-blue-50 py-20 px-6 lg:px-24">
         <div className="max-w-8xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold mb-12 text-black">Sectors</h2>
