@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Mittal Gupta & Co.",
   description:
-    "Leading Chartered Accountants in Kanpur since 1982, offering audit, tax, compliance, and advisory services with trust, accuracy, and professionalism.",
+    "Chartered accountancy firm in kanpur since 1982, offering audit, tax, compliance, and advisory services with trust, accuracy, and professionalism.",
 };
 
 export default function RootLayout({
