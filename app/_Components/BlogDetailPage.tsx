@@ -1,35 +1,76 @@
-const blog = {
-  title: "Lorem Ipsum Dolor Sit Amet",
-  date: "June 11, 2025",
-  content: `
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed pulvinar massa a ex euismod tincidunt. Proin nec metus non justo laoreet sagittis.
+"use client";
 
-  ### Subheading Example
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import axios from "axios";
+import { Loader } from "lucide-react";
 
-  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-
-  ### Benefits of Lorem Ipsum
-
-  - Helps maintain a readable layout
-  - Provides placeholder for testing fonts and styles
-  - Commonly used by designers and developers
-
-  At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.
-
-  ### Conclusion
-
-  Lorem ipsum has become the industry standard dummy text. Whether you're designing a corporate website, a SaaS platform, or a personal blog, lorem ipsum keeps your UI focused on design.
-  `,
-};
+interface Blog {
+  id: string;
+  title: string;
+  content: string;
+  createdAt: string;
+}
 
 export default function BlogDetailPage() {
+  const [blog, setBlog] = useState<Blog | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  const id = usePathname();
+  const blogId = id.split("/").pop();
+
+  useEffect(() => {
+    const fetchBlog = async () => {
+      try {
+        if (!blogId) {
+          setError("Missing blog ID");
+          setLoading(false);
+          return;
+        }
+
+        const res = await axios.get(`/api/getBlog?id=${blogId}`);
+        setBlog(res.data);
+      } catch (err) {
+        setError("Something went wrong");
+        console.error("Error fetching blog:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlog();
+  }, [blogId]);
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center my-20">
+        <Loader
+          className="animate-spin w-6 h-6 text-blue-600"
+          size={40}
+        />
+      </div>
+    );
+  }
+
+  if (error || !blog) {
+    return <div className="text-center mt-20 text-red-600 text-lg font-medium">{error || "Blog not found"}</div>;
+  }
+
+  const formatDate = (dateStr: string) => {
+    return new Date(dateStr).toLocaleDateString("en-IN", {
+      weekday: "long",
+      day: "numeric",
+      month: "long",
+      year: "numeric",
+    });
+  };
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-16">
-      {/* Title & metadata */}
-      <h1 className="text-4xl font-bold text-gray-900 mb-2 leading-tight">{blog.title}</h1>
-      <p className="text-sm text-gray-500 mb-8">• {blog.date}</p>
+      <h1 className="text-4xl font-bold text-gray-900 mb-2">{blog.title}</h1>
+      <p className="text-sm text-gray-500 mb-8">• {formatDate(blog.createdAt)}</p>
 
-      {/* Content area */}
       <div className="prose prose-lg prose-blue max-w-none text-gray-800">
         {blog.content
           .trim()
