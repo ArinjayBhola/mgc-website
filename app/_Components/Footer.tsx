@@ -100,7 +100,7 @@ const Footer = () => {
             />
             <div>
               <p className="font-semibold">Branch Office</p>
-              <p className="text-gray-300">House No. 31, Sector 15, Indra Nagar, Lucknow</p>
+              <p className="text-gray-300">302, Chintels House, 16, Station Road, Lucknow, Uttar Pradesh, 226001</p>
             </div>
           </div>
 
