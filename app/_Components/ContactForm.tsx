@@ -9,7 +9,7 @@ export default function ContactForm() {
         within our growing team.
       </p>
       <form
-        action="https://formspree.io/f/xyzjpqod"
+        action={process.env.NEXT_PUBLIC_FORMSPREE_URL}
         method="POST"
         className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
